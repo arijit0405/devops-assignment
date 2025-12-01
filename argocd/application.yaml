@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-demo
+  namespace: argocd
+spec:
+  project: default
+
+  # Source repository containing the Kubernetes manifests
+  source:
+    repoURL: "https://github.com/arijit0405/devops-assignment.git"
+    targetRevision: HEAD
+    path: manifests
+
+  # Destination cluster and namespace where ArgoCD will deploy the app
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
+
+  # Enable automated sync, including pruning and self-healing
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
