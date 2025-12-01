@@ -24,7 +24,10 @@ Outputs cluster endpoint and cluster name
 
 Generates kubeconfig for connecting to the cluster
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7575d57f-0ab1-4627-8888-a8eb310535e1" />
+<img width="1165" height="621" alt="image" src="https://github.com/user-attachments/assets/7b17fe2d-aa2f-44d6-a793-9d732d5629e6" />
+
+
+
 
 
 
