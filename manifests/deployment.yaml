@@ -6,7 +6,7 @@ metadata:
     app: nginx-demo
 spec:
     # Running 2 replicas to ensure basic availability
-  replicas: 2
+  replicas: 3   # Changed to 3 
   selector:
     matchLabels:
       app: nginx-demo
