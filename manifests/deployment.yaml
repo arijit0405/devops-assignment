@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx-demo
+spec:
+    # Running 2 replicas to ensure basic availability
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-demo
+  template:
+    metadata:
+      labels:
+        app: nginx-demo
+    spec:
+      containers:
+        - name: nginx
+            # Using a lightweight image
+          image: nginx:1.25-alpine
+          ports:
+            - containerPort: 80   # Exposes to the default nginx port
+          
