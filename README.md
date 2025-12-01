@@ -16,7 +16,7 @@ The Terraform setup does the following:
 
 Creates a dedicated VPC
 
-Deploys an EKS cluster (1.30)
+Deploys an EKS cluster 
 
 Creates a managed node group
 
