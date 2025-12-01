@@ -24,6 +24,12 @@ Outputs cluster endpoint and cluster name
 
 Generates kubeconfig for connecting to the cluster
 
+Commands used:
+
+terraform init
+terraform plan -out=tfplan
+terraform apply tfplan
+
 <img width="1165" height="621" alt="image" src="https://github.com/user-attachments/assets/7b17fe2d-aa2f-44d6-a793-9d732d5629e6" />
 
 2. Application Deployment – Kubernetes Manifests
@@ -52,6 +58,9 @@ ArgoCD UI Access
 I accessed the ArgoCD UI using port-forwarding
 
 Then visited: https://localhost:9091
+
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode - Initial ArgoCD Password
+
 
 <img width="1319" height="624" alt="image" src="https://github.com/user-attachments/assets/b0455fd6-5197-437b-bc6c-2e756590abe3" />
 
