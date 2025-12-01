@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    # This ensures that any path (/) is forwarded correctly to the backend service.
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  # Tells Kubernetes to use the NGINX ingress controller for this rule.
+  ingressClassName: nginx
+
+  rules:
+    # This is the domain that will route traffic to the Nginx service.
+    - host: mydemonginx.nosky.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                # The service inside the cluster that receives traffic.
+                name: nginx-service
+                port:
+                  number: 80   # Service port which is being exposed
